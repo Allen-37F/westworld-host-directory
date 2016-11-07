@@ -1,0 +1,49 @@
+
+<div class="container">
+  <h1>Stock Item: {{hostCtrl.singleHost.names.firstName}} {{hostCtrl.singleHost.names.lastName}}</h1>
+  <img ng-src="{{hostCtrl.singleHost.avatar}}" alt="Image Redacted - Please contact a supervisor immediately" />
+  <ul>
+    <li>Wetware Version:
+      1.{{hostCtrl.singleHost.gender}}
+    </li>
+    <li>Construction date:
+      {{hostCtrl.singleHost.dob.slice(0, 10)}}
+    </li>
+    <li ng-click="hostCtrl.locateHost((hostCtrl.singleHost.address.geo.lat + 180), (hostCtrl.singleHost.address.geo.lng + 180))">Current Location:
+      X: {{(hostCtrl.singleHost.address.geo.lat + 180)}}
+      Y: {{(hostCtrl.singleHost.address.geo.lng + 180)}}
+    </li>
+    <li>Maintenance Records: (in progress)</li>
+  </ul>
+
+</div>
+
+<!--
+data: {
+_id: "571cfd532890ad1100116321",
+username: "stevebaker",
+email: "steve@baker.com",
+password: "$2a$10$gNN19E6RdfCSFM0RIj/uUehnryPDypiZEVnPnZmZd5M2FSh4pWffO",
+dob: "1983-12-12T07:00:00.000Z",
+slug: "stevebaker",
+__v: 0,
+_matches: [ ],
+interestedIn: [
+0,
+1,
+2,
+3
+],
+gender: 0,
+address: {
+geo: {
+lat: 23,
+lng: 25
+}
+},
+avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/fronx/128.jpg",
+
+admin: false,
+active: true
+}
+} -->
