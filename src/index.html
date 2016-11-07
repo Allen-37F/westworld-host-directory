@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Delos LMC</title>
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body ng-cloak>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a ui-sref="home"><img class="navbar-brand" src="../images/delosLogo.png" alt="" /></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+
+            <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Livestock Manager <span class="caret"></span></a>
+               <ul class="dropdown-menu" role="menu">
+                 <li><a ui-sref="livestock.all">Active Hosts</a></li>
+                 <li><a ui-sref="livestock.new">Register New Host</a></li>
+                 <li><a ui-sref="livestock.inactive">Deactivated Units</a></li>
+                 <li><a ui-sref="livestock.intakeProtocol">Intake Protocol</a></li>
+               </ul>
+             </li>
+
+            <li><a onclick="leavingPage()" href="http://delosincorporated.com/">Security Panel</a></li>
+
+            <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Maps <span class="caret"></span></a>
+               <ul class="dropdown-menu" role="menu">
+                 <li><a ui-sref="corpMap">Corporate Map</a></li>
+                 <li><a ui-sref="parkMap">Park Map</a></li>
+               </ul>
+             </li>
+
+            <li><a ui-sref="maintenance">Maintenance</a></li>
+
+          </ul>
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+          <ul ng-controller="mainController as main" class="nav navbar-nav navbar-right">
+            <li data-toggle="modal" data-target="#modalTOS"><a href="#">Admin Access Level: <span class="theta">Theta</span></li>
+            <li> User: AWeber </a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content:  -->
+    <div ui-view></div>
+
+    <!-- Modal for TOS -->
+    <div class="modal" id="modalTOS">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Delos Terms of Service</h4>
+          </div>
+          <div class="modal-body">
+            <p ng-include="'DelosTOS.html'"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- scripts -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/config.js"></script>
+    <script type="text/javascript" src="js/services.js"></script>
+
+    <!-- components -->
+    <script type="text/javascript" src="js/components/main/main.controller.js"></script>
+    <script type="text/javascript" src="js/components/livestock/livestock.controller.js"></script>
+    <script type="text/javascript" src="js/components/maintenance/maintenance.controller.js"></script>
+    <script type="text/javascript" src="js/components/parkMap/parkMap.controller.js"></script>
+    <script type="text/javascript" src="js/components/map/map.controller.js"></script>
+
+    <!-- Custom -->
+    <script>function leavingPage() {alert("Security access confirmed. You are now being redirected to an external site.");}</script>
+
+  </body>
+</html>

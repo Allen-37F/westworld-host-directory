@@ -1,0 +1,120 @@
+/*Fonts:*/
+@font-face{
+    font-family: "Avenir-Light";
+    src: "http://summerfieldmattress.com/skin/frontend/default/craigs/fonts/avenir%20fonts/Avenir-Light.ttf"
+}
+
+/* Universal */
+html {
+  /*background-color: #202020;*/
+  background-color: #707172;
+  font-family: Avenir-Light;
+  background-size: 100%;
+  background-image: url("../images/westworld-main.jpg")
+}
+
+/*Nav*/
+nav {
+  background-color: #202020;
+  /*color: #202020;*/
+  font-family: Avenir-Light;
+}
+.navbar {
+  background-color: #202020;
+  color: #202020;
+  font-family: Avenir-Light;
+  font-size: 18px;
+}
+.theta {
+  color: #BABBBB;
+  border: 2px solid #BABBBB;
+  padding: 3px;
+}
+.btn-default {
+    background-color: #BABBBB;
+}
+
+/*Main image*/
+.indexPic {
+  width:100%;
+  margin-top: -20px;
+}
+
+/*Hosts page*/
+.livestockPage {
+  margin-top: -20px;
+  background-color: #202020;
+}
+.hostsTitle {
+  color: #FFF;
+}
+.findHost {
+  cursor: pointer;
+}
+.hostsTable {
+  background-color: #BABBBB;
+  padding-left: 500px;
+  border: 50px;
+}
+.imgThumb {
+  height: 58px;
+}
+.example-animate-container {
+  background:red;
+  border:1px solid black;
+  list-style:none;
+  margin:0;
+  padding:0 10px;
+}
+.animate-repeat {
+  line-height:30px;
+  list-style:none;
+  box-sizing:border-box;
+}
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  transition:all linear 0.5s;
+}
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:30px;
+}
+
+.searchHosts {
+  float:right;
+  margin-right: 50px;
+  margin-bottom: 15px;
+
+}
+
+/*Map Page*/
+.delosMap {
+  width: 100%;
+  margin-top: -37px;
+}
+.mapVideo {
+  width: 100%;
+  height: 720px;
+  overflow: hidden;
+  position: fixed
+}
+
+/*Park Map Page*/
+.parkMap {
+  width: 100%;
+  margin-top: -27px;
+}
+
+.parkMapFrame {
+  background-image: url('../images/parkMap.png');
+  width: 100%
+}

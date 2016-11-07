@@ -1,0 +1,33 @@
+<div ng-show="hostCtrl.showHosts" class="livestockPage ">
+  <div class="container">
+    <table class="table hostsTable ">
+      <h1 class="hostsTitle"><img src="../images/delosLogo.png" alt="" />
+       Browse Hosts </h1>
+      <input class="searchHosts" type="search" ng-model="q" placeholder="Apply Filter" aria-label="Filter Results" />
+      <thead>
+        <tr>
+          <th>Visual Appearance</th>
+          <th>Character Name</th>
+          <th>Stock Number</th>
+          <th>Current Location</th>
+          <th>Construction Date</th>
+          <th>Characters in Narrative</th>
+          <th>Wetware Version</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="animate-repeat" ng-if="host.dob > '1983-08-10T14:00:00.000Z' && host._matches.length" ng-repeat="host in hostCtrl.host | orderBy: 'names.firstName' | filter:q as results">
+          <div >
+            <td ng-click="hostCtrl.getOneHost(host._id)"><a ui-sref="livestock.single"><img class="imgThumb" ng-src="{{host.avatar}}" alt="[Redacted]" /></a></td>
+            <td>{{host.names.firstName}} {{host.names.lastName}}</td>
+            <td ng-click="hostService.getOneHost()">{{host._id.slice(17)}}</td>
+            <td class="findHost" ng-click="hostCtrl.locateHost((host.address.geo.lat + 180), (host.address.geo.lng + 180))">X: {{(host.address.geo.lat + 180)}}<br>Y: {{(host.address.geo.lng + 180)}}</td>
+            <td>{{host.dob.slice(0, 10)}}</td>
+            <td>{{host._matches.length}}</td>
+            <td>1.{{host.gender}}</td>
+          </div>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
